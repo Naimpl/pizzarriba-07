@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head bgcolor="000000"
+    <title></title>
+    <style>
+        
+        body, h1, form {
+            margin: 0;
+            padding: 0;
+        }
+
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        
+        h1 {
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        
+        .error-message {
+            color: red;
+            font-size: 12px;
+        }
+
+        
+        .success-message {
+            color: green;
+            font-size: 12px;
+        }
+    </style>
+</head>
+<head bgcolor="000000"
+<body>
+    <h1>PIZZA ARRIBA, AYUDANOS A SABER TU EXPERIENCIA</h1>
+    <form action="#" method="post" id="contact-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" maxlength="10" required>
+        
+        <label for="email">Correo electronico:</label>
+        <input type="email" id="email" name="email" required>
+        
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+        
+        <label for="nombre">Numero cel:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var formulario = document.getElementById('contact-form');
+            var nombreInput = document.getElementById('nombre');
+            var emailInput = document.getElementById('email');
+            var mensajeInput = document.getElementById('mensaje');
+
+            formulario.addEventListener('submit', function (event) {
+                var validacionCorrecta = true;
+                var errorMensaje = '';
+
+                if (nombreInput.value.trim() === '') {
+                    validacionCorrecta = false;
+                    errorMensaje += 'Por favor, ingrese un nombre.\n';
+                }
+
+                if (emailInput.value.trim() === '') {
+                    validacionCorrecta = false;
+                    errorMensaje += 'Por favor, ingrese un correo electrónico.\n';
+                }
+
+                if (mensajeInput.value.trim() === '') {
+                    validacionCorrecta = false;
+                    errorMensaje += 'Por favor, ingrese un mensaje.\n';
+                }
+
+                if (!validacionCorrecta) {
+                    alert('Se encontraron los siguientes errores:\n' + errorMensaje);
+                    event.preventDefault(); 
+                } else {
+                    alert('GRACIAS POR TU AYUDA');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
